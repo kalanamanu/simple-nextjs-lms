@@ -1,118 +1,91 @@
-✅ LMS PROJECT – FINALIZED MINI PLAN (Your “North Star”)
+# Learning Management System (LMS)
 
-You can literally copy this into a README or Notion note.
+## 📌 Project Overview
 
-1️⃣ Project Goal (Very Important)
+This project is a **full-stack Learning Management System (LMS)** built to strengthen and refresh core software engineering fundamentals, including **Next.js, Node.js, MongoDB, JWT authentication**, and frontend development using **TypeScript and Tailwind CSS**.
 
-Goal:
+The system supports **role-based access control** and simulates a real-world LMS workflow involving **Admins, Instructors, and Students**.
 
-Build a job-ready full-stack LMS to refresh and solidify understanding of Next.js, Node.js, MongoDB, JWT authentication, and frontend fundamentals.
+---
 
-Not:
+## 🎯 Project Goals
 
-Perfect LMS
+- Practice full-stack development with a clear separation of frontend and backend
+- Implement JWT-based authentication and role-based authorization
+- Design and implement MongoDB data models
+- Build real-world CRUD operations
+- Strengthen understanding of request–response flow and data relationships
 
-Feature-rich product
+---
 
-Enterprise system
+## 🧑‍💼 User Roles
 
-Just clear fundamentals.
+- **Admin**
+- **Instructor**
+- **Student**
 
-2️⃣ Target User Roles (LOCKED)
+---
 
-Only 3 roles:
+## 🔑 Core Features (v1)
 
-Admin
+### Authentication & Authorization
 
-Instructor
+- User registration and login
+- JWT-based authentication
+- Role-based access control
 
-Student
+### Course Management
 
-No more roles.
+- Admin creates courses
+- Admin assigns instructors to courses
+- Admin sets maximum student capacity for courses
+- Instructor adds lessons to assigned courses
 
-3️⃣ Core Features (v1 ONLY)
-Authentication
+### Enrollment Management
 
-Register
+- Instructor manually enrolls students into courses
+- Enrollment capacity is enforced based on course limits
 
-Login
+### Learning Progress
 
-JWT authentication
+- Students can manually mark lessons as completed
+- Lesson completion is tracked per student
 
-Role-based access
+### Dashboards
 
-Courses
+- Role-based dashboards for Admin, Instructor, and Student
 
-Admin / Instructor can create courses
+---
 
-Students can view courses
+## 🛠 Tech Stack
 
-Lessons
+### Frontend
 
-Instructor adds lessons to a course
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS
 
-Lessons are text or video links
+### Backend
 
-Enrollment
+- Node.js
+- Express.js
 
-Student enrolls in course
+### Database
 
-Student sees enrolled courses
+- MongoDB
+- Mongoose ODM
 
-Dashboard
+### Authentication
 
-Role-based dashboard:
+- JSON Web Tokens (JWT)
+- bcrypt
 
-Admin → overview
+---
 
-Instructor → own courses
+## 🗂 Project Structure
 
-Student → enrolled courses
+### Backend
 
-❌ No payments
-❌ No chat
-❌ No certificates
-❌ No quizzes
-
-(These are v2 ideas, ignore for now.)
-
-4️⃣ Tech Stack (FINAL — No Changes)
-Frontend
-
-Next.js (App Router)
-
-TypeScript
-
-Tailwind CSS
-
-Backend
-
-Node.js
-
-Express.js
-
-Database
-
-MongoDB
-
-Mongoose
-
-Auth
-
-JWT
-
-bcrypt
-
-This matches:
-
-Your CV
-
-Industry expectations
-
-Learning goals
-
-5️⃣ Project Structure (High-Level Only)
-Backend Structure
 lms-backend/
 ├── src/
 │ ├── models/
@@ -122,7 +95,11 @@ lms-backend/
 │ ├── config/
 │ └── server.js
 
-Frontend Structure
+shell
+Copy code
+
+### Frontend
+
 lms-frontend/
 ├── app/
 │ ├── login/
@@ -131,98 +108,126 @@ lms-frontend/
 │ ├── courses/
 │ └── layout.tsx
 
-👉 You don’t need more structure than this.
+yaml
+Copy code
 
-6️⃣ Database Models (MINIMAL)
-User
+---
+
+## 🧱 Database Design
+
+### User
+
+\_id
+
 name
+
 email
+
 password
+
 role (admin | instructor | student)
 
-Course
+shell
+Copy code
+
+### Course
+
+\_id
+
 title
+
 description
-instructorId
 
-Lesson
+instructorId (User)
+
+maxStudents
+
+createdBy (Admin)
+
+shell
+Copy code
+
+### Lesson
+
+\_id
+
 title
+
 content
-courseId
 
-Enrollment
-userId
-courseId
+courseId (Course)
 
-No optimization yet.
+shell
+Copy code
 
-7️⃣ Learning Strategy (Your 70 / 30 Rule)
-70%
+### Enrollment
 
-LMS building
+\_id
 
-Real bugs
+userId (Student)
 
-Connecting frontend & backend
+courseId (Course)
 
-30%
+enrolledAt
 
-HTML forms
+shell
+Copy code
 
-CSS / Tailwind layouts
+### LessonProgress
 
-JavaScript async / arrays / objects
+\_id
 
-📌 Refresh only what the project needs that week.
+userId (Student)
 
-8️⃣ AI Usage Rule (VERY IMPORTANT)
+lessonId (Lesson)
 
-You may use AI ONLY to:
+completed
 
-Explain code
+completedAt
 
-Debug errors
+yaml
+Copy code
 
-Clarify concepts
+---
 
-You should NOT:
+## 🔄 System Workflow
 
-Generate entire files blindly
+1. Admin creates a course and assigns an instructor
+2. Instructor adds lessons and enrolls students
+3. Students view lessons and mark them as completed
+4. Lesson progress is stored per student
 
-Copy without understanding
+---
 
-Golden rule:
+## 🤖 AI Usage Policy
 
-If you can explain it, you can keep it.
+AI tools are used **only for explanation, debugging, and concept clarification**.  
+All implemented code is reviewed and understood before being committed.
 
-9️⃣ Success Criteria (How You Know You’re Done)
+---
 
-You are “done” when:
+## 🚀 Future Enhancements (v2)
 
-You can explain the full request flow:
+- Course completion tracking
+- Certificates
+- Quizzes and assessments
+- Payment integration
+- Notifications
 
-Login → JWT → Protected route → DB
+---
 
-You can demo the LMS
+## 📚 Learning Focus
 
-You can answer interview questions using this project
+This project focuses on:
 
-Not when:
+- Backend-first development
+- Clear data modeling
+- Authentication and authorization
+- Understanding full request flow
+- Writing maintainable and explainable code
 
-UI is perfect
+---
 
-All features exist
+## 📌 Status
 
-10️⃣ Your NEXT ACTION (Important)
-
-Before coding, do this today:
-
-Create a GitHub repo
-
-Add a README.md
-
-Paste this plan inside it
-
-Commit it
-
-That’s your contract with yourself.
+**In Progress** — actively developed while applying for junior/graduate software engineering roles.
