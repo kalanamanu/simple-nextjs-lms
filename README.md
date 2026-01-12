@@ -95,8 +95,6 @@ lms-backend/
 │ ├── config/
 │ └── server.js
 
-shell
-Copy code
 
 ### Frontend
 
@@ -108,8 +106,6 @@ lms-frontend/
 │ ├── courses/
 │ └── layout.tsx
 
-yaml
-Copy code
 
 ---
 
@@ -127,8 +123,6 @@ password
 
 role (admin | instructor | student)
 
-shell
-Copy code
 
 ### Course
 
@@ -170,8 +164,6 @@ courseId (Course)
 
 enrolledAt
 
-shell
-Copy code
 
 ### LessonProgress
 
@@ -185,8 +177,6 @@ completed
 
 completedAt
 
-yaml
-Copy code
 
 ---
 
